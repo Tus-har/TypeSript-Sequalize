@@ -2,12 +2,13 @@
   "compilerOptions": {
     "module": "commonjs",
     "esModuleInterop": true,
-    "target": "es3",
+    "target": "es6",
     "moduleResolution": "node",
     "sourceMap": true,
     "pretty": true,
     "outDir": "dist",
     "baseUrl": "./src",
+    "strict": true,
     "paths": {
       "*": [
         "node_modules/*",
@@ -15,7 +16,9 @@
       ]
     },
     "lib": [
-      "es2015"
+      "es2015",
+      "es6",
+      "es7"
     ],
     "experimentalDecorators": true
   },
