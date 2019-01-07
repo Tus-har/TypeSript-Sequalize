@@ -1,12 +1,11 @@
-import Config from "./config/Config";
-import app from "./ExpressApp";
 
-const PORT = Config.PORT;
+import User from "./db/models/user";
 
-app.listen(PORT, () => {
-    console.log(Config.ENV);
-    console.log('Express server listening on port ' + PORT);
-});
+const test = async () => {
+    const user = new User({firstName: 'anas', lastName:'md', email: 'anas.ansal10@gmail.com'});
+    await user.save();
+    console.log(user);
+};
 
-
+test();
 
