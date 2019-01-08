@@ -20,8 +20,13 @@ const test = async () => {
         await user.$add('book', b);
     }
 
-    const books: any = await Lodash.sample(users).$get('books');
+
+    // @ts-ignore
+    const books: Book[] = await Lodash.sample(users).$get('books');
+    const author: User = await Lodash.sample(books).author;
+
     console.log(books.length);
+    console.log(author.lastName + " " +author.lastName);
 
     let userCount: number = await User.count({});
     let bookCount: number = await Book.count({});

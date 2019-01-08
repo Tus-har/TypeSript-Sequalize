@@ -35,14 +35,16 @@ export default class Book extends Model<Book> {
     authorId: number;
 
     @BelongsTo(() => User)
-    author: User;
+    get author(): Promise<User> {
+        // @ts-ignore
+        return this.$get('author');
+    }
 
     @Column
     public createdAt: Date;
 
     @Column
     public updatedAt: Date;
-
 
     @BeforeCreate
     @BeforeBulkCreate
