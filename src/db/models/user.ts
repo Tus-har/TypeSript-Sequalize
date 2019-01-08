@@ -3,13 +3,14 @@ import {
     BeforeBulkCreate,
     BeforeBulkUpdate,
     BeforeCreate, BeforeSave,
-    BeforeUpdate,
-    Column,
+    BeforeUpdate, BelongsTo,
+    Column, HasMany,
     Model,
     Table
 } from "sequelize-typescript";
 
 import sequelize from "../sequelize";
+import Book from "./book";
 
 // export interface UserAttributes {
 //     firstName ? : string;
@@ -47,6 +48,9 @@ export default class User extends Model<User> {
     @Column
     public updatedAt: Date;
 
+    @HasMany(() => Book)
+    books: Book[];
+
     @BeforeCreate
     @BeforeBulkCreate
     static setCreatedDate(instance: User){
@@ -68,5 +72,4 @@ export default class User extends Model<User> {
     }
 
 }
-
-sequelize.addModels([User]);
+sequelize.addModels([User, Book]);
