@@ -1,11 +1,11 @@
 import {
     QueryInterface,
     SequelizeStatic
-} from "sequelize";
+} from 'sequelize';
 
 export = {
     up: (queryInterface: QueryInterface, Sequelize: SequelizeStatic) => {
-        return queryInterface.createTable('Users', {
+        return queryInterface.createTable('Actors', {
             id: {
                 allowNull: false,
                 autoIncrement: true,
@@ -13,17 +13,13 @@ export = {
                 type: Sequelize.INTEGER
             },
 
-            firstName: {
+            name: {
                 type: Sequelize.STRING
             },
 
-            lastName: {
-                type: Sequelize.STRING
-            },
-
-            email: {
-                type: Sequelize.STRING
-            },
+            /*movies: {
+                type: Sequelize.ARRAY
+            },*/
 
             createdAt: {
                 allowNull: false,
@@ -38,6 +34,6 @@ export = {
     },
 
     down: (queryInterface: QueryInterface, Sequelize: SequelizeStatic) => {
-        return queryInterface.dropTable('Users');
+        return queryInterface.dropTable('Actors');
     }
 };

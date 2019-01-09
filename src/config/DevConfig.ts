@@ -8,7 +8,7 @@ const DevConfig = {
         dialect: 'postgres',
         operatorsAliases: Sequelize.Op as any,
         database: 'ts',
-        username: 'ansal',
+        username: 'kush',
         password: null,
     }
 };
