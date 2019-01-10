@@ -1,8 +1,8 @@
 
 import User from "./db/models/user";
-import Faker from "faker";
+import * as Faker from "faker";
 import Book from "./db/models/book";
-import Lodash from 'lodash';
+import * as Lodash from 'lodash';
 
 
 const test = async () => {

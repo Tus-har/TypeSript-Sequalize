@@ -1,24 +1,13 @@
 import express from "express";
 import bodyParser from "body-parser";
+import "reflect-metadata";
+import {useExpressServer} from "routing-controllers";
+import UserController from "./controllers/api/v1/UserController";
 
-
-class ExpressApp {
-
-    public app: express.Application;
-
-    constructor() {
-        this.app = express();
-        this.config();
-    }
-
-    private config(): void {
-
-        // support application/json type post data
-        this.app.use(bodyParser.json());
-
-        //support application/x-www-form-urlencoded post data
-        this.app.use(bodyParser.urlencoded({extended: false}));
-    }
-}
-
-export default new ExpressApp().app;
+let app = express(); // your created express server
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+useExpressServer(app, {
+    controllers: [UserController]
+});
+app.listen(3000); // run your express server
