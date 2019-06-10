@@ -2,13 +2,14 @@ import {
     AllowNull,
     AutoIncrement,
     Column,
-    CreatedAt,
+    CreatedAt, HasMany,
     IsDate,
     Model,
     PrimaryKey,
     Table,
-    UpdatedAt
+    UpdatedAt,
 } from 'sequelize-typescript';
+import Book from './Book';
 
 @Table({tableName: 'user'})
 class User extends Model<User> {
@@ -30,6 +31,9 @@ class User extends Model<User> {
 
     @IsDate @UpdatedAt @Column
     updatedAt: Date;
+
+    @HasMany(() => Book)
+    books: Book[];
 }
 
 export default User;

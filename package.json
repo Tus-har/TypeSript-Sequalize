@@ -10,7 +10,7 @@
     "serve": "node dist/server.js",
     "watch-node": "nodemon dist/server.js",
     "watch-ts": "tsc -w",
-    "migrate": "./node_modules/.bin/sequelize db:migrate"
+    "migrate": "sequelize db:migrate"
   },
   "author": "",
   "license": "ISC",
@@ -32,5 +32,14 @@
     "tslint": "^5.12.0",
     "typescript": "^3.2.2",
     "typescript-collections": "latest"
-  }
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/ansal10/ts-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/ansal10/ts-boilerplate/issues"
+  },
+  "homepage": "https://gitlab.com/ansal10/ts-boilerplate#readme"
 }

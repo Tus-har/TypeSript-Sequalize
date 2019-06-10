@@ -34,6 +34,6 @@ export = {
     },
 
     down: (queryInterface: QueryInterface, Sequelize: SequelizeStatic) => {
-        return queryInterface.dropTable('Users');
+        return queryInterface.dropTable('user');
     },
 };
